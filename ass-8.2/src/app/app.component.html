@@ -1,0 +1,34 @@
+
+// defining a div for form-operation 
+
+<div class="form-group">
+  <div class="col-sm-10">
+    <div class="form-group">
+      <input type="text" name="name" class="form-control" [(ngModel)]="name" #Name>
+    </div>
+    <div class="form-group">
+      <input type="text" name="lastName" class="form-control" [(ngModel)]="lastName" #LastName>
+    </div>
+    <button type="button" class="btn btn-default" (click)="submit(name,lastName)">Submit</button>
+
+    <hr/>
+    <div *ngIf="arrayList.length > 1">// using ngIf directive for the iteration 
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>LastName</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of arrayList">
+              <td>{{item.name}}</td>            // using string interpolation for displaying item detail
+              <td>{{item.lastName}}</td>  // using string interpolation for displaying item lastname 
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
